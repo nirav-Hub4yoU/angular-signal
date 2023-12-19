@@ -1,0 +1,19 @@
+<section class="main">
+  <ul class="todo-list">
+    @if (true) {
+      <app-todos-todo
+        @for
+        (item
+        of
+        visiableTodo();
+        track
+        item.id)
+        {}
+        *ngFor="let item of visiableTodo()"
+        [todo]="item"
+        [isEditing]="editingId === item.id"
+        (setEditingId)="setEditingId($event)"
+      ></app-todos-todo>
+    }
+  </ul>
+</section>
